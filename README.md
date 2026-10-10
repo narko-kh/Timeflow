@@ -30,7 +30,7 @@ It is fully bilingual: **English and Persian**, with a real right-to-left layout
 
 ## Download
 
-Grab the latest installer from the **[Releases page](https://github.com/narko-kh/timeflow/releases/latest)**:
+Grab the latest installer from the **[Releases page](https://github.com/narko-kh/Timeflow/releases/latest)**:
 
 | OS | File |
 | --- | --- |
@@ -147,8 +147,8 @@ A partial unique index (`one_active_entry`) guarantees that **at most one** entr
 Prerequisites: **Node.js 22+** and **Git**. There are no native modules, so you do **not** need Visual Studio, Xcode or a compiler toolchain.
 
 ```bash
-git clone https://github.com/narko-kh/timeflow.git
-cd timeflow
+git clone https://github.com/narko-kh/Timeflow.git
+cd Timeflow
 npm ci
 npm run dev
 ```

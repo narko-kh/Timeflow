@@ -26,8 +26,8 @@ git --version
 ## ۲. اجرای پروژه (توسعه)
 
 ```bash
-git clone https://github.com/narko-kh/timeflow.git
-cd timeflow
+git clone https://github.com/narko-kh/Timeflow.git
+cd Timeflow
 npm ci
 npm run dev
 ```
@@ -144,7 +144,7 @@ npm run dist:linux   # روی Linux    → release/*.AppImage و *.deb
 ۱. پروژه رو تو GitHub بذار (`narko-kh` رو با اسم کاربری خودت عوض کن):
 
 ```bash
-git remote add origin https://github.com/narko-kh/timeflow.git
+git remote add origin https://github.com/narko-kh/Timeflow.git
 git push -u origin main
 ```
 
