@@ -185,14 +185,14 @@ xattr -dr com.apple.quarantine /Applications/TimeFlow.app
 **AppImage** (بدون نصب):
 
 ```bash
-chmod +x TimeFlow-*-linux-x64.AppImage
-./TimeFlow-*-linux-x64.AppImage
+chmod +x TimeFlow-*-linux-x86_64.AppImage
+./TimeFlow-*-linux-x86_64.AppImage
 ```
 
 **deb** (Ubuntu/Debian):
 
 ```bash
-sudo apt install ./TimeFlow-*-linux-x64.deb
+sudo apt install ./TimeFlow-*-linux-amd64.deb
 # حذف
 sudo apt remove timeflow
 ```

@@ -36,7 +36,7 @@ Grab the latest installer from the **[Releases page](https://github.com/narko-kh
 | --- | --- |
 | Windows (x64) | `TimeFlow-<version>-win-x64.exe` |
 | macOS (Intel / Apple Silicon) | `TimeFlow-<version>-mac-x64.dmg` / `TimeFlow-<version>-mac-arm64.dmg` |
-| Linux (x64) | `TimeFlow-<version>-linux-x64.AppImage` / `.deb` |
+| Linux (x64) | `TimeFlow-<version>-linux-x86_64.AppImage` / `TimeFlow-<version>-linux-amd64.deb` |
 
 The installers are not code-signed, so your OS will warn you on first launch — see [Install notes](#install-notes) for how to get past it.
 
@@ -210,7 +210,7 @@ The installers are **not code-signed**, so each OS will warn you the first time.
 | --- | --- | --- |
 | **Windows** | `TimeFlow-<ver>-win-x64.exe` (NSIS, choose install folder) | SmartScreen: **More info → Run anyway** |
 | **macOS** | `TimeFlow-<ver>-mac-x64.dmg` / `-arm64.dmg` | Right-click the app → **Open**, or `xattr -dr com.apple.quarantine /Applications/TimeFlow.app` |
-| **Linux** | `TimeFlow-<ver>-linux-x64.AppImage` / `.deb` | `chmod +x TimeFlow-*.AppImage && ./TimeFlow-*.AppImage`. On Ubuntu 24.04+ the AppImage may need `--no-sandbox` because of AppArmor's unprivileged user-namespace restriction; the `.deb` does not have this problem. |
+| **Linux** | `TimeFlow-<ver>-linux-x86_64.AppImage` / `TimeFlow-<ver>-linux-amd64.deb` | `chmod +x TimeFlow-*.AppImage && ./TimeFlow-*.AppImage`. On Ubuntu 24.04+ the AppImage may need `--no-sandbox` because of AppArmor's unprivileged user-namespace restriction; the `.deb` does not have this problem. |
 
 ## Where your data lives
 
