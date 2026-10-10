@@ -1,0 +1,57 @@
+{
+  "name": "timeflow",
+  "version": "1.0.0",
+  "description": "Offline time tracker for freelancers — Electron + Next.js + embedded PostgreSQL",
+  "private": true,
+  "author": "Mobin <you@example.com>",
+  "license": "MIT",
+  "main": "dist-electron/main.cjs",
+  "scripts": {
+    "dev": "concurrently -k -n next,electron -c cyan,magenta \"next dev -p 3000\" \"wait-on http://localhost:3000 && tsup && cross-env ELECTRON_RENDERER_URL=http://localhost:3000 electron .\"",
+    "build:renderer": "next build && node scripts/csp-hashes.mjs",
+    "build:electron": "node scripts/clean.mjs && tsup",
+    "build": "npm run build:renderer && npm run build:electron",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "icons": "node scripts/make-icons.mjs",
+    "start": "electron .",
+    "dist": "npm run build && electron-builder --publish never",
+    "dist:win": "npm run build && electron-builder --win --publish never",
+    "dist:mac": "npm run build && electron-builder --mac --publish never",
+    "dist:linux": "npm run build && electron-builder --linux --publish never",
+    "e2e": "node e2e/smoke.mjs"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.5.8",
+    "i18next": "^26.4.3"
+  },
+  "devDependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/vazirmatn": "^5.3.0",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "concurrently": "^10.0.6",
+    "cross-env": "^10.1.0",
+    "electron": "^44.7.0",
+    "electron-builder": "^26.15.3",
+    "next": "^16.4.0",
+    "playwright": "^1.64.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-i18next": "^17.0.16",
+    "sharp": "^0.35.5",
+    "tsup": "^8.5.1",
+    "typescript": "~5.9",
+    "vitest": "^5.0.3",
+    "wait-on": "^9.5.1",
+    "zustand": "^5.0.15"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "allowScripts": {
+    "electron-winstaller@5.4.0": true,
+    "esbuild@0.27.7": true
+  }
+}

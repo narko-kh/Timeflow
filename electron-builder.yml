@@ -1,0 +1,48 @@
+# تنظیمات electron-builder
+# ------------------------
+# فقط خروجی استاتیک Next (out) و کد ساخته‌شده‌ی Electron داخل بسته میاد.
+# pglite باید از asar بیرون بمونه چون فایل‌های WASM/data خودش رو از دیسک می‌خونه.
+appId: com.timeflow.desktop
+productName: TimeFlow
+copyright: Copyright © 2025 Mobin
+directories:
+  output: release
+  buildResources: build
+files:
+  - out/**
+  - dist-electron/**
+  - assets/**
+  - package.json
+asarUnpack:
+  - node_modules/@electric-sql/pglite/**
+icon: build/icon.png
+artifactName: ${productName}-${version}-${os}-${arch}.${ext}
+
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  perMachine: false
+
+mac:
+  category: public.app-category.productivity
+  target:
+    - target: dmg
+      arch: [x64, arm64]
+  # نصب‌کننده امضا نمی‌شه؛ راهنمای README رو ببین
+  identity: null
+
+linux:
+  category: Office
+  maintainer: Mobin <you@example.com>
+  synopsis: Offline time tracker for freelancers
+  target:
+    - target: AppImage
+      arch: [x64]
+    - target: deb
+      arch: [x64]

@@ -1,0 +1,82 @@
+name: Release
+
+# تریگر: push تگ v* یا اجرای دستی
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build (${{ matrix.name }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { name: linux, os: ubuntu-latest, builder: '--linux' }
+          - { name: windows, os: windows-latest, builder: '--win' }
+          - { name: macos, os: macos-latest, builder: '--mac' }
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Unit and service tests
+        run: npm test
+
+      - name: Build (Next static export + Electron bundles)
+        run: npm run build
+
+      # تست smoke واقعی فقط روی لینوکس (زیر xvfb)؛ شکستش جلوی ساخت نصب‌کننده رو نمی‌گیره
+      - name: End-to-end smoke test (Linux, xvfb)
+        if: matrix.name == 'linux'
+        continue-on-error: true
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb libgbm1 libnss3 libasound2t64 || true
+          xvfb-run -a npm run e2e
+
+      - name: Package installers
+        run: npx electron-builder ${{ matrix.builder }} --publish never
+
+      - name: Upload installers
+        uses: actions/upload-artifact@v4
+        with:
+          name: timeflow-${{ matrix.name }}
+          if-no-files-found: error
+          path: |
+            release/*.exe
+            release/*.dmg
+            release/*.AppImage
+            release/*.deb
+
+  release:
+    name: Publish GitHub Release
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+
+      - name: List files
+        run: ls -la dist
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          generate_release_notes: true

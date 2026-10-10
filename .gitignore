@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+dist-electron
+release
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+deliverables
