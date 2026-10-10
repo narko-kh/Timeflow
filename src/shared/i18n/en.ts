@@ -170,7 +170,7 @@ export const en = {
     about: 'About',
     version: 'Version',
     dataFolder: 'Data folder',
-    madeBy: 'Built by Mobin',
+    madeBy: 'Built by Narko',
     desktopOnly: 'Desktop app for Windows, macOS and Linux.',
   },
   tray: {

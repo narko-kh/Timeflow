@@ -272,9 +272,9 @@ scripts/               CSP hashes, icon generation, clean
 
 ## Author
 
-Built by **Mobin**, full-stack developer — available for freelance work.
+Built by **Narko**, full-stack developer — available for freelance work.
 
-- GitHub: [@YOUR_GITHUB_USERNAME](https://github.com/YOUR_GITHUB_USERNAME)
-- Email: you@example.com
+- GitHub: [@narko-kh](https://github.com/narko-kh)
+- Email: narkokh022@gmail.com
 
 Released under the MIT License.

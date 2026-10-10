@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Offline time tracker for freelancers — Electron + Next.js + embedded PostgreSQL",
   "private": true,
-  "author": "Mobin <you@example.com>",
+  "author": "Narko <narkokh022@gmail.com>",
   "license": "MIT",
   "main": "dist-electron/main.cjs",
   "scripts": {

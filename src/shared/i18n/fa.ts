@@ -171,7 +171,7 @@ export const fa: Dictionary = {
     about: 'درباره',
     version: 'نسخه',
     dataFolder: 'پوشه‌ی داده‌ها',
-    madeBy: 'ساخته‌ی مبین',
+    madeBy: 'ساخته‌ی نارکو',
     desktopOnly: 'برنامه‌ی دسکتاپ برای ویندوز، macOS و لینوکس.',
   },
   tray: {

@@ -4,7 +4,7 @@
 # pglite باید از asar بیرون بمونه چون فایل‌های WASM/data خودش رو از دیسک می‌خونه.
 appId: com.timeflow.desktop
 productName: TimeFlow
-copyright: Copyright © 2025 Mobin
+copyright: Copyright © 2025 Narko
 directories:
   output: release
   buildResources: build
@@ -39,7 +39,7 @@ mac:
 
 linux:
   category: Office
-  maintainer: Mobin <you@example.com>
+  maintainer: Narko <narkokh022@gmail.com>
   synopsis: Offline time tracker for freelancers
   target:
     - target: AppImage

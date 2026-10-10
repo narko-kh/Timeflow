@@ -137,14 +137,14 @@ npm run dist:mac     # روی macOS    → release/*.dmg (x64 و arm64)
 npm run dist:linux   # روی Linux    → release/*.AppImage و *.deb
 ```
 
-اگه می‌خوای ایمیل maintainer بسته‌ی `deb` درست باشه، `electron-builder.yml` رو باز کن و `maintainer: Mobin <you@example.com>` رو با ایمیل خودت عوض کن.
+اگه می‌خوای ایمیل maintainer بسته‌ی `deb` درست باشه، `electron-builder.yml` رو باز کن و `maintainer: Narko <narkokh022@gmail.com>` رو با ایمیل خودت عوض کن.
 
 ### با GitHub Actions (توصیه‌شده)
 
 ۱. پروژه رو تو GitHub بذار (`YOUR_GITHUB_USERNAME` رو با اسم کاربری خودت عوض کن):
 
 ```bash
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/timeflow.git
+git remote add origin https://github.com/narko-kh/timeflow.git
 git push -u origin main
 ```
 
