@@ -28,6 +28,18 @@ It is fully bilingual: **English and Persian**, with a real right-to-left layout
 
 > **Desktop only.** Electron covers Windows, macOS and Linux. TimeFlow does not run on Android, iOS or tablets.
 
+## Download
+
+Grab the latest installer from the **[Releases page](https://github.com/narko-kh/timeflow/releases/latest)**:
+
+| OS | File |
+| --- | --- |
+| Windows (x64) | `TimeFlow-<version>-win-x64.exe` |
+| macOS (Intel / Apple Silicon) | `TimeFlow-<version>-mac-x64.dmg` / `TimeFlow-<version>-mac-arm64.dmg` |
+| Linux (x64) | `TimeFlow-<version>-linux-x64.AppImage` / `.deb` |
+
+The installers are not code-signed, so your OS will warn you on first launch — see [Install notes](#install-notes) for how to get past it.
+
 ## Screenshots
 
 | Timer | Today's entries |
@@ -135,7 +147,7 @@ A partial unique index (`one_active_entry`) guarantees that **at most one** entr
 Prerequisites: **Node.js 22+** and **Git**. There are no native modules, so you do **not** need Visual Studio, Xcode or a compiler toolchain.
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/timeflow.git
+git clone https://github.com/narko-kh/timeflow.git
 cd timeflow
 npm ci
 npm run dev
@@ -272,7 +284,7 @@ scripts/               CSP hashes, icon generation, clean
 
 ## Author
 
-Built by **Narko**, full-stack developer — available for freelance work.
+Built by **Mobin Khastehband** (Narko), full-stack developer — available for freelance work.
 
 - GitHub: [@narko-kh](https://github.com/narko-kh)
 - Email: narkokh022@gmail.com

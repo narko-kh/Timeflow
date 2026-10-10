@@ -170,7 +170,7 @@ export const en = {
     about: 'About',
     version: 'Version',
     dataFolder: 'Data folder',
-    madeBy: 'Built by Narko',
+    madeBy: 'Built by Mobin Khastehband (Narko)',
     desktopOnly: 'Desktop app for Windows, macOS and Linux.',
   },
   tray: {
